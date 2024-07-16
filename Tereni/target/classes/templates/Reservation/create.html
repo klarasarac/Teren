@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dodaj Novu Rezervaciju</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-control {
+      width: 100%;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<h2 class="text-center">Dodaj Novu Rezervaciju</h2>
+<form th:action="@{/reservation/add}" method="post" class="form">
+  <div class="form-group">
+    <label for="startTime">Početak Rezervacije:</label>
+    <input type="datetime-local" id="startTime" name="startTime" class="form-control" required />
+  </div>
+  <div class="form-group">
+    <label for="endTime">Kraj Rezervacije:</label>
+    <input type="datetime-local" id="endTime" name="endTime" class="form-control" required readonly />
+  </div>
+  <input type="hidden" id="facilitiesId" name="facilitiesId" th:value="${facilitiid}" />
+
+  <button type="submit" class="btn btn-primary">Dodaj Rezervaciju</button>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.getElementById('startTime').addEventListener('change', function() {
+    var startTime = new Date(this.value);
+    if (!isNaN(startTime.getTime())) {
+      var endTime = new Date(startTime.getTime() + 60 * 60 * 1000);
+      document.getElementById('endTime').value = endTime.toISOString().slice(0, 16);
+    } else {
+      document.getElementById('endTime').value = '';
+    }
+  });
+</script>
+</body>
+</html>

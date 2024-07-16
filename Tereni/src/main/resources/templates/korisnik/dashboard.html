@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Korisnikova Rezervacija Gym Terena</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #343a40;
+        }
+
+        .card-text {
+            color: #6c757d;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .btn {
+            border-radius: 20px;
+        }
+
+        .btn-primary, .btn-danger {
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary:hover, .btn-danger:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Dobrodošli</h1>
+    <form action="/logout" method="post">
+        <button type="submit" class="btn btn-danger">Odjavi se</button>
+    </form>
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Rezervacija Gym Terena</h5>
+            <p class="card-text">Pregledajte dostupne gym terene i izvršite rezervaciju.</p>
+            <a href="#" class="btn btn-primary">Rezervacija Terena</a>
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Moje Rezervacije</h5>
+            <p class="card-text">Pregledajte svoje trenutne i prošle rezervacije gym terena.</p>
+            <a href="#" class="btn btn-primary">Pregled Rezervacija</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

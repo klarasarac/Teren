@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rezervacije</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        table {
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            text-align: center;
+        }
+        .actions a {
+            margin-right: 10px;
+        }
+        .btn-add-reservation {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div th:fragment="content" class="container">
+    <h1 class="text-center">Lista Vaših Rezervacija</h1>
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Početak Rezervacije</th>
+                <th>Kraj Rezervacije</th>
+                <th>Korisnik</th>
+                <th>Teren</th>
+                <th>Cijena</th>
+                <th>Akcije</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="reservation : ${listReservation}">
+                <td th:text="${reservation.id}">ID</td>
+                <td th:text="${#temporals.format(reservation.startTime, 'dd.MM.yyyy HH:mm')}">Početak</td>
+                <td th:text="${#temporals.format(reservation.endTime, 'dd.MM.yyyy HH:mm')}">Kraj</td>
+                <td th:text="${reservation.user.ime} + ' ' + ${reservation.user.prezime}">Korisnik</td>
+                <td th:text="${reservation.facilities.sport}">Naziv terena</td>
+                <td th:text="${reservation.facilities.price}+ ' KM/Sat'">Cijena</td>
+                <td class="actions">
+                    <a th:href="@{/reservation/delete/{id}(id=${reservation.id})}" class="btn btn-danger btn-sm" onclick="return confirm('Jeste li sigurni?')">Izbriši</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a th:href="@{/facilities}" class="btn btn-primary btn-add-reservation">Dodaj novu rezervaciju</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ Tereni je aplikacija za upravljanje rezervacijama sportskih terena.
 
 ## Pregled
 
-Aplikacija omogućava korisnicima da pregledaju dostupne sportske terene, rezervišu termine, i prate svoje rezervacije.
+Aplikacija omogućava korisnicima da pregledavaju dostupne sportske terene, rezerviraju termine i prate svoje rezervacije.
 
 ## Funkcionalnosti
 
@@ -16,7 +16,7 @@ Aplikacija omogućava korisnicima da pregledaju dostupne sportske terene, rezerv
 ## Tehnologije
 
 - [Spring Boot](https://spring.io/projects/spring-boot) - Backend framework
-- [Thymeleaf](https://www.thymeleaf.org/) - Template engine za server-side renderovanje
+- [Thymeleaf](https://www.thymeleaf.org/) - Template engine za server-side renderiranje
 - [Bootstrap](https://getbootstrap.com/) - CSS framework za responzivni dizajn
 
 ## Instalacija
@@ -38,11 +38,11 @@ Aplikacija omogućava korisnicima da pregledaju dostupne sportske terene, rezerv
 
 ## Korištenje
 
-1. Otvorite vaš web pretraživač i idite na:
+1. Otvorite vaš web preglednik i idite na:
     ```
     http://localhost:8080
     ```
 
-2. Registrirajte novi korisnički račun ili se prijavite sa postojećim.
+2. Registrirajte novi korisnički račun ili se prijavite s postojećim.
 
-3. Pregledajte dostupne terene i rezervišite termine po želji.
+3. Pregledajte dostupne terene i rezervirajte termine po želji.
